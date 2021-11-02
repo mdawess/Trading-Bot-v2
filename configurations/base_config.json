@@ -1,0 +1,5 @@
+{
+  "id": "Michael",
+  "tickers": ["SPY", "TSLA", "AAPL"],
+  "volume": 1000
+}
