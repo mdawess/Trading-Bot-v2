@@ -1,2 +1,2 @@
-# Trading-Bot-v2.
+# Trading-Bot-v2
 Second attempt at creating a trading bot
