@@ -1,0 +1,6 @@
+pandas-ta
+numpy
+pandas
+pykrakenapi
+krakenex
+alpaca-trade-api
