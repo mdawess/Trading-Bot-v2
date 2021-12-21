@@ -1,6 +1,6 @@
 {
   "id": "Michael",
-  "tickers": ["SPY", "TSLA", "AAPL"],
+  "tickers": ["BTC-USD"],
   "period": "24h",
   "interval": "5m",
   "volume": 1000,

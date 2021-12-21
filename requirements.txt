@@ -1,6 +1,5 @@
 pandas-ta
 numpy
 pandas
-pykrakenapi
-krakenex
+yfinance
 alpaca-trade-api
