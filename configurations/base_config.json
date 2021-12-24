@@ -1,8 +1,7 @@
 {
   "id": "Michael",
-  "tickers": ["SPY", "TSLA", "AAPL"],
-  "period": "24h",
+  "tickers": ["TSLA", "SPY", "AAPL"],
+  "period": "1h",
   "interval": "5m",
-  "volume": 1000,
   "strategy": "technicals"
 }

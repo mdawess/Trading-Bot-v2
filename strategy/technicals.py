@@ -32,7 +32,7 @@ class Technicals:
         :return: RSI
         """
         # From: StackOverflow
-        close = self.security.get_data['Adj Close']
+        close = self.security.get_data()['Adj Close']
         # Get the difference in price from previous step
         delta = close.diff()
         # Get rid of the first row
@@ -40,18 +40,16 @@ class Technicals:
         # Make the positive gains (up) and negative gains (down) Series
         up, down = delta.clip(lower=0), delta.clip(upper=0).abs()
 
-        roll_up = up.rolling(period).mean()
-        roll_down = down.rolling(period).mean()
-
-        if down == 0:
-            rsi = 100
-        elif up == 0:
-            rsi = 0
+        if down.empty:
+            return 100
+        elif up.empty:
+            return 0
         else:
+            roll_up = up.rolling(period).mean()[-1]
+            roll_down = down.rolling(period).mean()[-1]
             rs = roll_up / roll_down
             rsi = 100 - (100 / (1 + rs))
-
-        return rsi
+            return rsi
 
     def calculate_average_volume(self, period: str) -> float:
         """

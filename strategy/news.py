@@ -1,4 +1,4 @@
-
+from security.security import Security
 
 class News:
 

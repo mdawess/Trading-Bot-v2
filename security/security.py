@@ -18,7 +18,8 @@ class Security:
         self._ticker = ticker
         self._period = period
         self._interval = interval
-        self._data = yf.download(self._ticker, self._period, self._interval)
+        self._data = yf.download(self._ticker, period=self._period,
+                                 interval=self._interval)
 
     def get_ticker(self) -> str:
         """
@@ -45,4 +46,5 @@ class Security:
         :param new_period:
         :return: None
         """
-        self._data = yf.download(self._ticker, new_period, self._interval)
+        self._data = yf.download(self._ticker, period=new_period,
+                                 interval=self._interval)

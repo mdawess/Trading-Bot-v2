@@ -1,7 +1,7 @@
 import json
 from security.security import Security
-from technicals import Technicals
-from news import News
+from strategy.technicals import Technicals
+from strategy.news import News
 from helpers.configurations import load_config
 
 

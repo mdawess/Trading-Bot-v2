@@ -1,8 +1,8 @@
 {
   "id": "Michael",
-  "tickers": ["BTC-USD"],
+  "tickers": ["BTCUSD"],
   "period": "24h",
   "interval": "5m",
-  "volume": 1000,
+  "volume": 1,
   "strategy": "technicals"
 }
