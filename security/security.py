@@ -20,6 +20,8 @@ class Security:
         self._interval = interval
         self._data = yf.download(self._ticker, period=self._period,
                                  interval=self._interval)
+        self._purchase_prices = []
+        self._average_price = None
 
     def get_ticker(self) -> str:
         """
@@ -48,3 +50,22 @@ class Security:
         """
         self._data = yf.download(self._ticker, period=new_period,
                                  interval=self._interval)
+
+    def set_average_price(self, price: float) -> None:
+        """
+        :param price: The price the security was purchased at
+        :return: None
+        """
+        if not self._purchase_prices:
+            self._purchase_prices.append(price)
+            self._average_price = price
+        else:
+            self._purchase_prices.append(price)
+            self._average_price = sum(self._purchase_prices) / \
+                                  len(self._purchase_prices)
+
+    def get_average_price(self) -> float:
+        """
+        :return: The average purchase price of the stock
+        """
+        return self._average_price
